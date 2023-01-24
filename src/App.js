@@ -52,7 +52,7 @@ const navigationStyles = css`
 const navigationLinkStyles = css`
   list-style-type: none;
   display: flex;
-  gap: 9px;
+  gap: 15px;
   margin: 0;
   li {
     :hover {
@@ -78,10 +78,21 @@ const navigationContactStyles = css`
 `;
 
 const headingStyles = css`
+  display: inline-block;
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 0 30px;
+  max-width: 1000px;
+  margin: 42px 500px;
+  padding: 10px 70px;
+  h1 {
+    font-size: 45px;
+    color: #131628;
+    padding-left: 35px;
+  }
+  p {
+    font-size: 22px;
+    color: #697576;
+    padding-left: 8px;
+  }
 `;
 
 function App() {
@@ -123,11 +134,19 @@ function App() {
           </div>
         </div>
         <div css={headingStyles}>
-          <h1>Instant bank payments.</h1>
-          <p>Get paid directly to your bank account. No cards needed.</p>
           <div>
-            <a href=" ">CONTACT US</a>
-            <a href=" ">LEARN MORE</a>
+            <h1>Instant bank payments.</h1>
+            <p>Get paid directly to your bank account. No cards needed.</p>
+          </div>
+          <div>
+            <ul css={navigationLinkStyles}>
+              <li css={navigationContactStyles}>
+                <a href=" ">CONTACT US</a>
+              </li>
+              <li css={navigationContactStyles}>
+                <a href=" ">LEARN MORE</a>
+              </li>
+            </ul>
           </div>
         </div>
       </header>
