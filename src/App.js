@@ -7,7 +7,7 @@ const headerNavigation = css`
   box-sizing: border-box;
 `;
 
-const noticeSectionStyle = css`
+const noticeSectionStyles = css`
   display: flex;
   max-width: 1080px;
   margin: 1em auto;
@@ -49,26 +49,21 @@ const navigationStyles = css`
   padding: 8px;
 `;
 
-const navigationMenuStyles = css`
+const navigationLinkStyles = css`
   list-style-type: none;
   display: flex;
-  gap: 12px;
+  gap: 9px;
   margin: 0;
   li {
-    border-bottom: 2px solid transparent;
-
     :hover {
-      text-decoration: none;
-      border-bottom: 2px solid #5a67d8;
-
       > a {
-        color: #5a67d8;
+        color: #4bc16b;
       }
     }
     > a {
       text-decoration: none;
       color: #2d3748;
-      font-weight: 600;
+      font-weight: 400;
       font-size: 1rem;
       padding: 12px 16px;
       display: flex;
@@ -78,11 +73,22 @@ const navigationMenuStyles = css`
   }
 `;
 
+const navigationContactStyles = css`
+  border: 1px solid #697675;
+`;
+
+const headingStyles = css`
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 30px;
+`;
+
 function App() {
   return (
     <>
       <header css={headerNavigation}>
-        <section css={noticeSectionStyle}>
+        <section css={noticeSectionStyles}>
           <strong css={highlightedTextStyles}>NEW</strong>
           <span>
             Get the latest project updates, delivered right to your inbox!
@@ -91,12 +97,12 @@ function App() {
         </section>
         <div css={wrapperStyles}>
           <div css={navigationStyles}>
-            <div>
-              <a href="https://verify.as/index.html">..."logo"</a>
+            <div css={navigationStyles}>
+              <a href="https://verify.as/index.html">..."logo"</a>{' '}
               <p>PAYMENT</p>
             </div>
-            <nav css={navigationMenuStyles}>
-              <ul>
+            <nav>
+              <ul css={navigationLinkStyles}>
                 <li>
                   <a href=" ">Home</a>
                 </li>
@@ -109,14 +115,14 @@ function App() {
                 <li>
                   <a href=" ">Documentation</a>
                 </li>
-                <li>
+                <li css={navigationContactStyles}>
                   <a href=" ">CONTACT US</a>
                 </li>
               </ul>
             </nav>
           </div>
         </div>
-        <div>
+        <div css={headingStyles}>
           <h1>Instant bank payments.</h1>
           <p>Get paid directly to your bank account. No cards needed.</p>
           <div>
