@@ -13,7 +13,6 @@ const headerNavigation = css`
 
 const noticeSectionStyles = css`
   display: flex;
-
   max-width: 1080px;
   margin: 1em auto;
   background-color: #c7f0e5;
@@ -52,14 +51,15 @@ const navigationStyles = css`
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  padding: 8px;
+  padding: 8px 8px;
 `;
 
 const navigationLinkStyles = css`
   list-style-type: none;
   display: flex;
-  gap: 15px;
-  margin: 0;
+  gap: 20px;
+  margin: auto;
+  padding: 2px;
   li {
     :hover {
       > a {
@@ -79,15 +79,21 @@ const navigationLinkStyles = css`
   }
 `;
 
+const contactGreenButtonStyles = css`
+  background-color: #79ce6d;
+`;
+
 const navigationContactStyles = css`
   border: 1px solid #697675;
+  padding: 0 1px 0px 10px;
+  margin: 2px;
 `;
 
 const headingStyles = css`
   display: inline-block;
   width: 100%;
   max-width: 1000px;
-  margin: 40px 500px;
+  margin: 40px 495px;
   padding: 10px 70px;
   h1 {
     font-size: 45px;
@@ -102,12 +108,15 @@ const headingStyles = css`
 `;
 
 const mainStyles = css`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
-  gap: 150px;
+  gap: 250px;
   box-sizing: content-box;
   flex-wrap: wrap;
-  margin: 250px 300px;
+  margin: 450px 300px;
+
+  padding: 30px 180px;
 `;
 
 function App() {
@@ -157,15 +166,13 @@ function App() {
           </div>
           <div>
             <ul css={navigationLinkStyles}>
-              <li>
-                <a href=" " css={navigationContactStyles}>
+              <li css={navigationContactStyles}>
+                <a href=" " css={contactGreenButtonStyles}>
                   CONTACT US
                 </a>
               </li>
               <li css={navigationContactStyles}>
-                <a href=" " css={navigationContactStyles}>
-                  LEARN MORE
-                </a>
+                <a href=" ">LEARN MORE</a>
               </li>
             </ul>
           </div>
