@@ -8,6 +8,7 @@ import { ReactComponent as Seller } from './seller.svg';
 const headerNavigation = css`
   background-size: 100%;
   box-sizing: border-box;
+  justify-content: space-between;
 `;
 
 const noticeSectionStyles = css`
@@ -83,7 +84,7 @@ const navigationContactStyles = css`
 `;
 
 const headingStyles = css`
-  display: block;
+  display: inline-block;
   width: 100%;
   max-width: 1000px;
   margin: 40px 500px;
@@ -102,9 +103,11 @@ const headingStyles = css`
 
 const mainStyles = css`
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
   gap: 150px;
+  box-sizing: content-box;
+  flex-wrap: wrap;
+  margin: 250px 300px;
 `;
 
 function App() {
@@ -154,49 +157,58 @@ function App() {
           </div>
           <div>
             <ul css={navigationLinkStyles}>
-              <li css={navigationContactStyles}>
-                <a href=" ">CONTACT US</a>
+              <li>
+                <a href=" " css={navigationContactStyles}>
+                  CONTACT US
+                </a>
               </li>
               <li css={navigationContactStyles}>
-                <a href=" ">LEARN MORE</a>
+                <a href=" " css={navigationContactStyles}>
+                  LEARN MORE
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </header>
-
       <main>
-        <div css={mainStyles}>
+        <div>
+          <div css={mainStyles}>
+            <section>
+              <Seller />
+              <h2>Sellers</h2>
+              <p>
+                <Checkmark />
+                No transaction fees
+                <br />
+                <Checkmark />
+                No chargebacks
+                <br />
+                <Checkmark />
+                Simple API: one integration, all the banks
+                <br />
+              </p>
+            </section>
+            <section>
+              <Buyer />
+              <h2>Buyers</h2>
+              <p>
+                <Checkmark />
+                No credit card needed
+                <br />
+                <Checkmark />
+                One click checkout <br />
+                <Checkmark />
+                Discounts at select sellers
+                <br />
+              </p>
+            </section>
+          </div>
           <section>
-            <Seller />
-            <h2>Sellers</h2>
-            <p>
-              <Checkmark />
-              No transaction fees
-              <br />
-              <Checkmark />
-              No chargebacks
-              <br />
-              <Checkmark />
-              Simple API: one integration, all the banks
-              <br />
-            </p>
+            <a css={navigationContactStyles} href=" ">
+              Get Started
+            </a>
           </section>
-          <section>
-            <Buyer />
-            <h2>Buyers</h2>
-            <p>
-              <Checkmark />
-              No credit card needed
-              <br />
-              <Checkmark />
-              One click checkout <br />
-              <Checkmark />
-              Discounts at select sellers
-              <br />
-            </p>
-          </section>
-          <a>Get Started</a>
         </div>
       </main>
       <footer>FOOTER</footer>
