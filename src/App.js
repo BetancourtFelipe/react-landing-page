@@ -1,6 +1,9 @@
-/** @jsxImportSource @emotion/react */
-
 import { css } from '@emotion/react';
+import { ReactComponent as Buyer } from './buyer.svg';
+import { ReactComponent as Checkmark } from './checkmark.svg';
+/** @jsxImportSource @emotion/react */
+import { ReactComponent as Logo } from './logo.svg';
+import { ReactComponent as Seller } from './seller.svg';
 
 const headerNavigation = css`
   background-size: 100%;
@@ -9,6 +12,7 @@ const headerNavigation = css`
 
 const noticeSectionStyles = css`
   display: flex;
+
   max-width: 1080px;
   margin: 1em auto;
   background-color: #c7f0e5;
@@ -43,6 +47,7 @@ const wrapperStyles = css`
 
 const navigationStyles = css`
   display: flex;
+
   align-items: center;
   justify-content: space-between;
   background-color: white;
@@ -78,10 +83,10 @@ const navigationContactStyles = css`
 `;
 
 const headingStyles = css`
-  display: inline-block;
+  display: block;
   width: 100%;
   max-width: 1000px;
-  margin: 42px 500px;
+  margin: 40px 500px;
   padding: 10px 70px;
   h1 {
     font-size: 45px;
@@ -93,6 +98,13 @@ const headingStyles = css`
     color: #697576;
     padding-left: 8px;
   }
+`;
+
+const mainStyles = css`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 150px;
 `;
 
 function App() {
@@ -109,7 +121,9 @@ function App() {
         <div css={wrapperStyles}>
           <div css={navigationStyles}>
             <div css={navigationStyles}>
-              <a href="https://verify.as/index.html">..."logo"</a>{' '}
+              <a href="https://verify.as/index.html">
+                <Logo />
+              </a>{' '}
               <p>PAYMENT</p>
             </div>
             <nav>
@@ -151,7 +165,40 @@ function App() {
         </div>
       </header>
 
-      <main>MAIN</main>
+      <main>
+        <div css={mainStyles}>
+          <section>
+            <Seller />
+            <h2>Sellers</h2>
+            <p>
+              <Checkmark />
+              No transaction fees
+              <br />
+              <Checkmark />
+              No chargebacks
+              <br />
+              <Checkmark />
+              Simple API: one integration, all the banks
+              <br />
+            </p>
+          </section>
+          <section>
+            <Buyer />
+            <h2>Buyers</h2>
+            <p>
+              <Checkmark />
+              No credit card needed
+              <br />
+              <Checkmark />
+              One click checkout <br />
+              <Checkmark />
+              Discounts at select sellers
+              <br />
+            </p>
+          </section>
+          <a>Get Started</a>
+        </div>
+      </main>
       <footer>FOOTER</footer>
     </>
   );
