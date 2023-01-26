@@ -3,7 +3,10 @@ import { ReactComponent as Buyer } from './buyer.svg';
 import { ReactComponent as Checkmark } from './checkmark.svg';
 /** @jsxImportSource @emotion/react */
 import { ReactComponent as Logo } from './logo.svg';
+import { ReactComponent as Fees } from './lower-fees.svg';
+import { ReactComponent as Nocard } from './no-card-needed.svg';
 import { ReactComponent as Seller } from './seller.svg';
+import { ReactComponent as SimpleApi } from './simple-api.svg';
 
 const headerNavigation = css`
   background-size: 100%;
@@ -59,7 +62,7 @@ const navigationLinkStyles = css`
   display: flex;
   gap: 20px;
   margin: auto;
-  padding: 2px;
+
   li {
     :hover {
       > a {
@@ -71,10 +74,11 @@ const navigationLinkStyles = css`
       color: #2d3748;
       font-weight: 400;
       font-size: 1rem;
-      padding: 12px 16px;
+      padding: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 1px;
     }
   }
 `;
@@ -85,8 +89,9 @@ const contactGreenButtonStyles = css`
 
 const navigationContactStyles = css`
   border: 1px solid #697675;
-  padding: 0 1px 0px 10px;
+  padding: 1px 5px;
   margin: 2px;
+  font-family: Nunito Sans;
 `;
 
 const headingStyles = css`
@@ -109,14 +114,18 @@ const headingStyles = css`
 
 const mainStyles = css`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 4fr 4fr;
   justify-content: space-between;
-  gap: 250px;
-  box-sizing: content-box;
+  gap: 150px;
+  box-sizing: border-box;
   flex-wrap: wrap;
-  margin: 450px 300px;
-
+  margin: 100px 300px;
   padding: 30px 180px;
+`;
+
+const greenContactSection = css`
+  padding: 74px;
+  background-color: #44c897;
 `;
 
 function App() {
@@ -196,6 +205,7 @@ function App() {
                 <br />
               </p>
             </section>
+
             <section>
               <Buyer />
               <h2>Buyers</h2>
@@ -215,6 +225,56 @@ function App() {
             <a css={navigationContactStyles} href=" ">
               Get Started
             </a>
+          </section>
+          <div css={mainStyles}>
+            <section>
+              <h2>Preview</h2>
+              <p>
+                NEW Verify Payments is an embeddable payment form for desktop
+                and mobile devices. It works within your site — customers can
+                pay instantly, without being redirected away to complete the
+                transaction.
+              </p>
+            </section>
+          </div>
+          <h3>SELLERS</h3>
+          <div css={mainStyles}>
+            <Nocard />
+            <section>
+              <h3>No Cards Needed</h3>
+              <p>
+                Credit cards have notoriously low penetration in the Middle East
+                region, with 80% of consumers opting to pay with cash instead.
+                Verify is digital cash; it is as good as getting paid in cash,
+                but without having to handle the physical notes yourself.
+              </p>
+            </section>
+            <section>
+              <h3>Simple API</h3>
+              <p>
+                We've integrated with the largest retail banks in the UAE and
+                Bahrain, so you don't have to. Just integrate with the Verify
+                API once, and you'll get access to all of the financial
+                institutions on the Verify network. What's more is, as more
+                banks join the network, you'll automatically get access to them
+                with no extra work!
+              </p>
+            </section>
+            <SimpleApi />
+            <Fees />
+            <section>
+              <h3>Lower fees</h3>
+              <p>
+                No sign up fees, monthly fees, currency exchange fees or
+                settlement fees. You can sign up with Verify for absolutely
+                free, and start accepting payments immediately. If you're an
+                individual without a Trade License, you can still process up to
+                AED100,000 per year with no additional requirements.
+              </p>
+            </section>
+          </div>
+          <section css={greenContactSection}>
+            <a>CONTACT US</a>
           </section>
         </div>
       </main>
