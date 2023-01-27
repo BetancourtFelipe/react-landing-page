@@ -112,9 +112,13 @@ const headingStyles = css`
   }
 `;
 
+const headingLinkStyles = css`
+  padding-left: 10%;
+`;
+
 const mainStyles = css`
   display: grid;
-  grid-template-columns: 4fr 4fr;
+  grid-template-columns: 2fr 2fr;
   justify-content: space-between;
   gap: 150px;
   box-sizing: border-box;
@@ -123,13 +127,27 @@ const mainStyles = css`
   padding: 30px 180px;
 `;
 
+const sellerHeadingStyle = css`
+  margin: 65px 30px;
+  padding-left: 45%;
+  font-weight: bold;
+  color: green;
+  font-size: xx-large;
+`;
+
 const greenContactSection = css`
   padding: 74px;
   background-color: #44c897;
 `;
 
 const footerContactLink = css`
-  padding: 700px;
+  padding: 500px;
+  background-color: #0b4f4a;
+  color: white;
+  padding: 7px 30px;
+  align-items: center;
+  margin: 650px;
+  font-size: large;
 `;
 
 function App() {
@@ -177,7 +195,7 @@ function App() {
             <h1>Instant bank payments.</h1>
             <p>Get paid directly to your bank account. No cards needed.</p>
           </div>
-          <div>
+          <div css={headingLinkStyles}>
             <ul css={navigationLinkStyles}>
               <li css={navigationContactStyles}>
                 <a href=" " css={contactGreenButtonStyles}>
@@ -195,8 +213,10 @@ function App() {
         <div>
           <div css={mainStyles}>
             <section>
-              <Seller />
-              <h2>Sellers</h2>
+              <section>
+                <Seller />
+                <h2>Sellers</h2>
+              </section>
               <p>
                 <CheckMark />
                 No transaction fees
@@ -234,14 +254,14 @@ function App() {
             <section>
               <h2>Preview</h2>
               <p>
-                NEW Verify Payments is an embeddable payment form for desktop
-                and mobile devices. It works within your site — customers can
-                pay instantly, without being redirected away to complete the
-                transaction.
+                <strong css={highlightedTextStyles}>NEW</strong> Verify Payments
+                is an embeddable payment form for desktop and mobile devices. It
+                works within your site — customers can pay instantly, without
+                being redirected away to complete the transaction.
               </p>
             </section>
           </div>
-          <h3>SELLERS</h3>
+          <h3 css={sellerHeadingStyle}>SELLERS</h3>
           <div css={mainStyles}>
             <NoCard />
             <section>
