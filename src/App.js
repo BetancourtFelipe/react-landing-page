@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 import { ReactComponent as Buyer } from './buyer.svg';
-import { ReactComponent as Checkmark } from './checkmark.svg';
+import { ReactComponent as CheckMark } from './checkmark.svg';
 /** @jsxImportSource @emotion/react */
 import { ReactComponent as Logo } from './logo.svg';
 import { ReactComponent as Fees } from './lower-fees.svg';
-import { ReactComponent as Nocard } from './no-card-needed.svg';
+import { ReactComponent as NoCard } from './no-card-needed.svg';
 import { ReactComponent as Seller } from './seller.svg';
 import { ReactComponent as SimpleApi } from './simple-api.svg';
 
@@ -128,6 +128,10 @@ const greenContactSection = css`
   background-color: #44c897;
 `;
 
+const footerContactLink = css`
+  padding: 700px;
+`;
+
 function App() {
   return (
     <>
@@ -194,13 +198,13 @@ function App() {
               <Seller />
               <h2>Sellers</h2>
               <p>
-                <Checkmark />
+                <CheckMark />
                 No transaction fees
                 <br />
-                <Checkmark />
+                <CheckMark />
                 No chargebacks
                 <br />
-                <Checkmark />
+                <CheckMark />
                 Simple API: one integration, all the banks
                 <br />
               </p>
@@ -210,12 +214,12 @@ function App() {
               <Buyer />
               <h2>Buyers</h2>
               <p>
-                <Checkmark />
+                <CheckMark />
                 No credit card needed
                 <br />
-                <Checkmark />
+                <CheckMark />
                 One click checkout <br />
-                <Checkmark />
+                <CheckMark />
                 Discounts at select sellers
                 <br />
               </p>
@@ -239,7 +243,7 @@ function App() {
           </div>
           <h3>SELLERS</h3>
           <div css={mainStyles}>
-            <Nocard />
+            <NoCard />
             <section>
               <h3>No Cards Needed</h3>
               <p>
@@ -274,7 +278,7 @@ function App() {
             </section>
           </div>
           <section css={greenContactSection}>
-            <a>CONTACT US</a>
+            <a css={footerContactLink}>CONTACT US</a>
           </section>
         </div>
       </main>
